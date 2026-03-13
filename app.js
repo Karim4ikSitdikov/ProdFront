@@ -5,19 +5,43 @@
     onboarding: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen">
           <section class="hero">
-            <div class="hero-banner">Просто сделай</div>
-            <div class="hero-sub">свайп вправо</div>
+            <div class="hero-text">
+              <div class="hero-left">Просто сделай</div>
+              <div class="hero-right">свайп вправо</div>
+            </div>
+            
+            <div class="hero-description">
+              Знакомства на основе реального образа жизни, транзакций <br/>и поведенческих сигналов. Без спама и низкокачественных мэтчей.
+            </div>
+
+            <div class="hero-features">
+              <div class="hero-feature-item">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-text">Умный мэтчинг</div>
+              </div>
+              <div class="hero-feature-item">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-text">Без абьюза</div>
+              </div>
+              <div class="hero-feature-item">
+                <div class="feature-icon">💡</div>
+                <div class="feature-text">Понятная совместимость</div>
+              </div>
+            </div>
+
             <div class="hero-actions">
-              <button class="btn-primary wide" type="button" data-link="/register">
-                Регистрация
+              <button class="btn-primary wide pulse-animation" type="button" data-link="/register">
+                Создать профиль
               </button>
-              <a class="link-muted" href="#" data-link="/login">Войти в аккаунт</a>
+              <a class="link-muted" href="#" data-link="/login">Уже есть аккаунт? Войти</a>
             </div>
           </section>
         </main>
@@ -27,28 +51,52 @@
     login: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
-        <main class="screen">
-          <div class="section-title">Вход</div>
-          <form class="form">
-            <div>
-              <label for="login-email">Введите вашу почту</label>
-              <input id="login-email" class="input-field" type="email" placeholder="email" />
-            </div>
-            <div>
-              <label for="login-pass">Введите пароль</label>
-              <input id="login-pass" class="input-field" type="password" placeholder="password" />
-            </div>
-            <a class="link-muted" href="#">Забыли пароль?</a>
-            <div class="form-actions">
-              <button class="btn-primary wide" type="button" data-link="/feed">
-                Войти
-              </button>
-            </div>
-          </form>
+        <main class="screen auth-screen">
+          <div class="auth-layout auth-layout-reversed">
+            
+            <section class="auth-card">
+              <div class="auth-card-head">
+                <div>
+                  <div class="auth-title">Вход</div>
+                  <div class="auth-subtitle">Войдите в свой профиль</div>
+                </div>
+              </div>
+
+              <form class="form auth-form">
+                <div>
+                  <label for="login-email">Введите вашу почту</label>
+                  <input id="login-email" class="input-field" type="email" placeholder="email" />
+                </div>
+                <div>
+                  <label for="login-pass">Введите пароль</label>
+                  <input id="login-pass" class="input-field" type="password" placeholder="password" />
+                </div>
+                <a class="link-muted" style="margin-top:-6px;display:inline-block;font-size:14px;" href="#">Забыли пароль?</a>
+                <div class="form-actions auth-actions mt-3" style="margin-top: 24px;">
+                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
+                    Войти
+                  </button>
+                  <div class="auth-alt mt-3" style="margin-top: 16px; text-align: center;">
+                    Нет аккаунта? <a href="#" data-link="/register">Создать профиль</a>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <section class="auth-hero auth-hero-login">
+              <div class="auth-badge">С возвращением!</div>
+              <h1>Добро пожаловать</h1>
+              <p>
+                Рады видеть вас снова. Продолжите поиск идеального партнера с помощью поведенческого мэтчинга.
+              </p>
+            </section>
+          </div>
         </main>
       </div>
     `,
@@ -56,8 +104,10 @@
     register: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen auth-screen">
@@ -104,8 +154,8 @@
                   />
                 </div>
                 <div class="form-actions auth-actions">
-                  <button class="btn-primary wide" type="button" data-link="/feed">
-                    Зарегистрироваться
+                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
+                    Создать профиль
                   </button>
                   <div class="auth-alt">
                     Уже есть аккаунт? <a href="#" data-link="/login">Войти</a>
@@ -121,8 +171,10 @@
     feed: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen has-bottom-nav">
@@ -211,8 +263,10 @@
     chats: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen has-bottom-nav">
@@ -294,8 +348,10 @@
     chat: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen has-bottom-nav has-chat-input">
@@ -360,8 +416,10 @@
     profile: () => `
       <div class="app">
         <header class="topbar">
-          <div class="logo-box">лого</div>
-          <div class="app-title">Название</div>
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
         </header>
 
         <main class="screen has-bottom-nav">
@@ -437,12 +495,24 @@
     }
 
     init() {
-      // Handle initial page load
-      this.loadPage(window.location.pathname);
+      // Handle initial page load, checking both pathname (for legacy support or direct root) and hash
+      let currentPath = window.location.hash.replace('#', '');
+      if (!currentPath || currentPath === '') {
+          currentPath = window.location.pathname === '/' ? '/' : window.location.pathname;
+          // If they land on a non-root path that isn't found (which won't happen here due to 404, 
+          // but just in case), they'll be redirected to / by loadPage.
+      }
+      
+      // Auto-correct to hash based URL if we landed on root without hash
+      if (currentPath === '/' && !window.location.hash) {
+          window.history.replaceState(null, '', '#/');
+      }
+
+      this.loadPage(currentPath);
 
       // Handle browser back/forward buttons
-      window.addEventListener('popstate', () => {
-        this.loadPage(window.location.pathname);
+      window.addEventListener('hashchange', () => {
+        this.loadPage(window.location.hash.replace('#', '') || '/');
       });
 
       // Handle link clicks
@@ -457,32 +527,26 @@
     }
 
     navigate(path) {
-      window.history.pushState({}, '', path);
-      this.loadPage(path);
+      window.location.hash = path;
     }
 
     loadPage(path) {
-      // Find matching route
       const route = this.routes.find(r => r.path === path);
-      
       if (route && this.pages[route.page]) {
-        // Render page
-        this.appContainer.innerHTML = this.pages[route.page]();
-        
-        // Initialize page-specific components
-        this.initPageComponents(route.page);
-        
-        // Update active nav items
-        this.updateActiveNav(route.page);
-        
-        // Update document title
-        this.updateTitle(route.page);
-        
-        // Scroll to top
-        window.scrollTo(0, 0);
+        const updateDOM = () => {
+          this.appContainer.innerHTML = this.pages[route.page]();
+          this.initPageComponents(route.page);
+          this.updateActiveNav(route.page);
+          this.updateTitle(route.page);
+          window.scrollTo(0, 0);
+        };
+        if (document.startViewTransition) {
+          document.startViewTransition(updateDOM);
+        } else {
+          updateDOM();
+        }
       } else {
-        // 404 - redirect to home
-        this.navigate('/');
+        window.location.hash = "/";
       }
     }
 
@@ -500,17 +564,19 @@
       if (cardStack && window.SwipeCards) {
         const swipeCards = new window.SwipeCards(cardStack);
         
-        // Attach button handlers
-        const actionButtons = document.querySelectorAll('.action-circle');
-        actionButtons.forEach((btn, index) => {
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (index === 0) {
-              swipeCards.programmaticSwipe('left');
-            } else if (index === 1) {
-              swipeCards.programmaticSwipe('right');
-            }
-          });
+        // Attach button handlers using event delegation
+        cardStack.addEventListener('click', (e) => {
+          const btn = e.target.closest('.action-circle');
+          if (!btn) return;
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Check what type of button it is based on content
+          if (btn.innerHTML.includes('&times;') || btn.textContent.includes('×')) {
+            swipeCards.programmaticSwipe('left');
+          } else {
+            swipeCards.programmaticSwipe('right');
+          }
         });
         
         // Attach compatibility badge handler

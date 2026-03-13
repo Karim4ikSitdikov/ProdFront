@@ -3,29 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Название — Онбординг</title>
+    <title>Название</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="onboarding">
-    <div class="app">
-      <header class="topbar">
-        <div class="logo-box">лого</div>
-        <div class="app-title">Название</div>
-      </header>
-
-      <main class="screen">
-        <section class="hero">
-          <div class="hero-banner">Просто сделай</div>
-          <div class="hero-sub">свайп вправо</div>
-          <div class="hero-actions">
-            <button class="btn-primary wide" type="button" onclick="location.href='register.html'">
-              Регистрация
-            </button>
-            <a class="link-muted" href="login.html">Войти в аккаунт</a>
-          </div>
-        </section>
-      </main>
-    </div>
+  <body>
+    <div id="app"></div>
+    <script src="api.js"></script>
+    <script src="state.js"></script>
+    <script src="modal.js"></script>
+    <script src="swipe.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

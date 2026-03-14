@@ -98,12 +98,14 @@ class SwipeCards {
   }
 
   swipeRight() {
+    this.showLikeIndicator(1);
     this.animateOut('right', () => {
       this.handleAction('like');
     });
   }
 
   swipeLeft() {
+    this.showPassIndicator(1);
     this.animateOut('left', () => {
       this.handleAction('pass');
     });

@@ -1395,24 +1395,11 @@ a {
 
 @media (min-width: 900px) {
   .screen.has-bottom-nav {
-    padding-bottom: 60px;
+    padding-bottom: 120px;
   }
 
   .screen.has-chat-input {
-    padding-bottom: 80px;
-  }
-
-  .bottom-nav {
-    position: static;
-    transform: none;
-    margin: 24px auto 40px;
-  }
-
-  .chat-input {
-    position: static;
-    transform: none;
-    margin: 28px auto 40px;
-    width: min(760px, calc(100% - 64px));
+    padding-bottom: 140px;
   }
 }
 
@@ -1753,4 +1740,17 @@ a {
 ::view-transition-group(auth-card) {
   animation-duration: 0.6s;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .feature-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }

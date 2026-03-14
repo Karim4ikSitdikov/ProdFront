@@ -24,15 +24,15 @@
 
             <div class="hero-features">
               <div class="hero-feature-item">
-                <div class="feature-icon">🎯</div>
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
                 <div class="feature-text">Умный мэтчинг</div>
               </div>
               <div class="hero-feature-item">
-                <div class="feature-icon">🛡️</div>
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
                 <div class="feature-text">Без абьюза</div>
               </div>
               <div class="hero-feature-item">
-                <div class="feature-icon">💡</div>
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
                 <div class="feature-text">Понятная совместимость</div>
               </div>
             </div>
@@ -154,11 +154,76 @@
                   />
                 </div>
                 <div class="form-actions auth-actions">
-                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
-                    Создать профиль
+                  <button class="btn-primary wide pulse-animation" type="button" data-link="/register-step-2">
+                    Далее
                   </button>
-                  <div class="auth-alt">
+                  <div class="auth-alt mt-3" style="text-align: center; margin-top: 16px;">
                     Уже есть аккаунт? <a href="#" data-link="/login">Войти</a>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </main>
+      </div>
+    `,
+
+    register2: () => `
+      <div class="app">
+        <header class="topbar">
+          <a href="#" class="topbar-brand" data-link="/">
+            <div class="logo-box">Т</div>
+            <div class="app-title">Мэтч</div>
+          </a>
+        </header>
+
+        <main class="screen auth-screen">
+          <div class="auth-layout">
+            <section class="auth-hero">
+              <div class="auth-badge">Осталось чуть-чуть</div>
+              <h1>О себе</h1>
+              <p>
+                Важно заполнить профиль честно. Это поможет нашим алгоритмам находить наиболее подходящих партнеров.
+              </p>
+              <div class="auth-features">
+                <div class="auth-feature">
+                  Искренность сближает
+                </div>
+                <div class="auth-feature">
+                  Больше деталей — точнее мэтч
+                </div>
+              </div>
+            </section>
+
+            <section class="auth-card">
+              <div class="auth-card-head">
+                <div>
+                  <div class="auth-title">Оформление</div>
+                  <div class="auth-subtitle">Шаг 2 из 2</div>
+                </div>
+                <div class="auth-step">2/2</div>
+              </div>
+
+              <form class="form auth-form">
+                <div class="photo-upload-placeholder" style="margin-bottom: 24px; text-align: center; border: 2px dashed var(--border); padding: 32px; border-radius: 20px; cursor: pointer; transition: background 0.2s ease;">
+                  <div style="margin-bottom: 12px; color: var(--text);"><svg style="width:48px;height:48px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>
+                  <div style="font-size: 15px; color: var(--text); font-weight: 500;">Загрузить лучшее фото</div>
+                  <input type="file" style="display: none;" accept="image/*" />
+                </div>
+                <div>
+                  <label for="reg-name">Ваше имя</label>
+                  <input id="reg-name" class="input-field" type="text" placeholder="Например, Алексей" />
+                </div>
+                <div>
+                  <label for="reg-desc">Пару слов о вас</label>
+                  <textarea id="reg-desc" class="input-field" style="resize: none; min-height: 90px; padding-top: 14px;" placeholder="Чем увлекаетесь?"></textarea>
+                </div>
+                <div class="form-actions auth-actions" style="margin-top: 24px;">
+                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
+                    Завершить регистрацию
+                  </button>
+                  <div class="auth-alt mt-3" style="text-align: center; margin-top: 16px;">
+                    <a href="#" data-link="/register">Вернуться назад</a>
                   </div>
                 </div>
               </form>
@@ -477,10 +542,7 @@
     { path: '/', page: 'onboarding' },
     { path: '/login', page: 'login' },
     { path: '/register', page: 'register' },
-    { path: '/feed', page: 'feed' },
-    { path: '/chats', page: 'chats' },
-    { path: '/chat', page: 'chat' },
-    { path: '/profile', page: 'profile' },
+      { path: '/register-step-2', page: 'register2' },
   ];
 
   // Router class

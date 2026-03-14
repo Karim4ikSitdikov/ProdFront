@@ -101,7 +101,7 @@
       </div>
     `,
 
-    register: () => `
+        register: () => `
       <div class="app">
         <header class="topbar">
           <a href="#" class="topbar-brand" data-link="/">
@@ -111,119 +111,55 @@
         </header>
 
         <main class="screen auth-screen">
-          <div class="auth-layout">
-            <section class="auth-hero">
-              <div class="auth-badge">T‑style matching</div>
-              <h1>Регистрация</h1>
-              <p>
-                Создайте профиль и получите персональную выдачу по безопасным поведенческим сигналам.
-                Приватные данные не раскрываются.
-              </p>
-              <div class="auth-features">
-                <div class="auth-feature">Персональные рекомендации</div>
-                <div class="auth-feature">Защита от абьюза</div>
-                <div class="auth-feature">Прозрачные объяснения</div>
-              </div>
-            </section>
-
-            <section class="auth-card">
-              <div class="auth-card-head">
+          <div class="auth-layout" style="max-height: 100vh; overflow-y: auto;">
+            <section class="auth-card" style="margin-top: 10px; padding: 24px; max-width: 400px; width: 100%;">
+              <div class="auth-card-head" style="margin-bottom: 24px;">
                 <div>
                   <div class="auth-title">Создать аккаунт</div>
-                  <div class="auth-subtitle">Заполните минимальный профиль</div>
+                  <div class="auth-subtitle">Расскажите о себе</div>
                 </div>
-                <div class="auth-step">1/2</div>
               </div>
 
               <form class="form auth-form">
-                <div>
-                  <label for="reg-email">Введите вашу почту</label>
-                  <input id="reg-email" class="input-field" type="email" placeholder="email" />
+                <div class="photo-upload-placeholder" style="margin-bottom: 16px; text-align: center; border: 2px dashed var(--border); padding: 20px; border-radius: 12px; cursor: pointer; transition: background 0.2s ease;">
+                  <div style="margin-bottom: 8px; color: var(--text);">
+                    <svg style="width:36px;height:36px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                  </div>
+                  <div style="font-size: 14px; color: var(--text); font-weight: 500;">Загрузить фото</div>
+                  <input type="file" style="display: none;" accept="image/*" />
                 </div>
-                <div>
-                  <label for="reg-pass">Придумайте пароль</label>
-                  <input id="reg-pass" class="input-field" type="password" placeholder="password" />
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div>
+                    <label for="reg-name" style="font-size: 12px;">Ваше имя</label>
+                    <input id="reg-name" class="input-field" type="text" placeholder="Алексей" />
+                  </div>
+                  <div>
+                    <label for="reg-email" style="font-size: 12px;">Почта</label>
+                    <input id="reg-email" class="input-field" type="email" placeholder="email@x.com" />
+                  </div>
                 </div>
-                <div>
-                  <label for="reg-pass-confirm">Подтвердите пароль</label>
-                  <input
-                    id="reg-pass-confirm"
-                    class="input-field"
-                    type="password"
-                    placeholder="password confirm"
-                  />
+
+                <div style="margin-bottom: 12px;">
+                  <label for="reg-pass" style="font-size: 12px;">Придумайте пароль</label>
+                  <input id="reg-pass" class="input-field" type="password" placeholder="Пароль" />
                 </div>
+
+                <div style="margin-bottom: 20px;">
+                  <label for="reg-desc" style="font-size: 12px;">Пару слов о вас</label>
+                  <textarea id="reg-desc" class="input-field" style="resize: none; min-height: 60px; padding-top: 10px;" placeholder="Чем увлекаетесь?"></textarea>
+                </div>
+
                 <div class="form-actions auth-actions">
-                  <button class="btn-primary wide pulse-animation" type="button" data-link="/register-step-2">
-                    Далее
+                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
+                    Создать профиль
                   </button>
                   <div class="auth-alt mt-3" style="text-align: center; margin-top: 16px;">
                     Уже есть аккаунт? <a href="#" data-link="/login">Войти</a>
-                  </div>
-                </div>
-              </form>
-            </section>
-          </div>
-        </main>
-      </div>
-    `,
-
-    register2: () => `
-      <div class="app">
-        <header class="topbar">
-          <a href="#" class="topbar-brand" data-link="/">
-            <div class="logo-box">Т</div>
-            <div class="app-title">Мэтч</div>
-          </a>
-        </header>
-
-        <main class="screen auth-screen">
-          <div class="auth-layout">
-            <section class="auth-hero">
-              <div class="auth-badge">Осталось чуть-чуть</div>
-              <h1>О себе</h1>
-              <p>
-                Важно заполнить профиль честно. Это поможет нашим алгоритмам находить наиболее подходящих партнеров.
-              </p>
-              <div class="auth-features">
-                <div class="auth-feature">
-                  Искренность сближает
-                </div>
-                <div class="auth-feature">
-                  Больше деталей — точнее мэтч
-                </div>
-              </div>
-            </section>
-
-            <section class="auth-card">
-              <div class="auth-card-head">
-                <div>
-                  <div class="auth-title">Оформление</div>
-                  <div class="auth-subtitle">Шаг 2 из 2</div>
-                </div>
-                <div class="auth-step">2/2</div>
-              </div>
-
-              <form class="form auth-form">
-                <div class="photo-upload-placeholder" style="margin-bottom: 24px; text-align: center; border: 2px dashed var(--border); padding: 32px; border-radius: 20px; cursor: pointer; transition: background 0.2s ease;">
-                  <div style="margin-bottom: 12px; color: var(--text);"><svg style="width:48px;height:48px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>
-                  <div style="font-size: 15px; color: var(--text); font-weight: 500;">Загрузить лучшее фото</div>
-                  <input type="file" style="display: none;" accept="image/*" />
-                </div>
-                <div>
-                  <label for="reg-name">Ваше имя</label>
-                  <input id="reg-name" class="input-field" type="text" placeholder="Например, Алексей" />
-                </div>
-                <div>
-                  <label for="reg-desc">Пару слов о вас</label>
-                  <textarea id="reg-desc" class="input-field" style="resize: none; min-height: 90px; padding-top: 14px;" placeholder="Чем увлекаетесь?"></textarea>
-                </div>
-                <div class="form-actions auth-actions" style="margin-top: 24px;">
-                  <button class="btn-primary wide pulse-animation" type="button" data-link="/feed">
-                    Завершить регистрацию
-                  </button>
-                  <div class="auth-alt mt-3" style="text-align: center; margin-top: 16px;">
-                    <a href="#" data-link="/register">Вернуться назад</a>
                   </div>
                 </div>
               </form>
@@ -542,7 +478,7 @@
     { path: '/', page: 'onboarding' },
     { path: '/login', page: 'login' },
     { path: '/register', page: 'register' },
-      { path: '/register-step-2', page: 'register2' },
+      
   ];
 
   // Router class
@@ -700,6 +636,22 @@
       document.title = titles[page] || 'Название';
     }
   }
+
+  const fetchWithAuth = async (url, options = {}) => {
+    try {
+      const response = await fetch(`http://localhost:3000${url}`, {
+        ...options,
+        headers: {
+          'Content-Type': 'application/json',
+          ...(options.headers || {})
+        }
+      });
+      return await response.json();
+    } catch (e) {
+      console.error('Fetch error:', e);
+      return null;
+    }
+  };
 
   // Initialize router
   const router = new Router(routes, pages);

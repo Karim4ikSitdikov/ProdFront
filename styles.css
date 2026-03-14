@@ -207,8 +207,9 @@ a {
   padding: 20px;
   border-radius: 20px;
   box-shadow: var(--shadow-soft);
-  min-width: 160px;
+  width: 180px; /* fixed width for better text wrapping */
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .hero-feature-item:hover {
@@ -224,12 +225,38 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.feature-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .feature-text {
   font-weight: 700;
   font-size: 16px;
   color: var(--text);
+  text-align: center;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.4s ease, margin-top 0.3s ease;
+}
+
+.hero-feature-item:hover .feature-desc {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 4px;
 }
 
 .hero-actions {
@@ -296,6 +323,7 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -306,6 +334,9 @@ a {
 .btn-primary.wide {
   width: 100%;
   max-width: 340px;
+  padding: 18px 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form {
@@ -864,7 +895,10 @@ a {
 }
 
 .auth-actions {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
@@ -1332,12 +1366,26 @@ a {
     flex-direction: row;
     padding: 16px;
     justify-content: flex-start;
+    align-items: center;
   }
   
   .feature-icon {
     width: 48px;
     height: 48px;
     font-size: 24px;
+    margin-right: 12px;
+  }
+
+  .feature-text-content {
+    align-items: flex-start;
+  }
+
+  .feature-text {
+    text-align: left;
+  }
+
+  .feature-desc {
+    text-align: left;
   }
 
   .bottom-nav {
